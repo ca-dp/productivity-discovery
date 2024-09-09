@@ -1,0 +1,15 @@
+---
+export const prerender = false;
+
+import MainLayout from "@/layouts/main-layout.astro";
+import { AnimesTabs } from "site/src/components/animes-tabs";
+import { getPlanningAnimes } from "site/src/lib/graphql";
+
+const data = await getPlanningAnimes();
+---
+
+<MainLayout title="Anime List">
+  <section class="container py-8 ">
+    <AnimesTabs animes={data} client:load />
+  </section>
+</MainLayout>

@@ -1,0 +1,14 @@
+{
+	"name": "productivity-crawler",
+	"version": "1.0.0",
+	"description": "Crawls sites for information",
+	"main": "index.ts",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@mendable/firecrawl-js": "^1.2.2"
+	}
+}
