@@ -1,0 +1,34 @@
+<!-- Footer content (commented out)
+<footer>
+  <div>
+    <h3>Company</h3>
+    <ul>
+      <li>About</li>
+      <li>Enterprise</li>
+      <li>Partners</li>
+      <li>Jobs</li>
+    </ul>
+  </div>
+  <div>
+    <h3>Product</h3>
+    <ul>
+      <li>Security</li>
+      <li>Customization</li>
+      <li>Customers</li>
+      <li>Changelog</li>
+    </ul>
+  </div>
+  <div>
+    <h3>Docs</h3>
+    <ul>
+      <li>Introduction</li>
+      <li>Installation</li>
+      <li>Components</li>
+      <li>Code Blocks</li>
+    </ul>
+  </div>
+  <div>
+    <p>Form Newsletter coming soon!</p>
+  </div>
+</footer>
+-->

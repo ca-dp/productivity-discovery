@@ -1,0 +1,14 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<section class="bg-gray-200 py-20">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4 text-gray-600">{title}</h2>
+    <p class="text-xl text-gray-500">近日公開予定。お楽しみに！</p>
+  </div>
+</section>

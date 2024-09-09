@@ -1,19 +1,20 @@
 import type { SidebarNavItem, SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
-	name: "Astronomy",
+	name: "CA Productivity Portal",
 	description:
-		"An modern example app built using Astro v4 & shadcn/ui. Inspired by shadcn/taxonomy.",
+		"CAの従業員向け生産性ポータル。最新の開発ツールやベストプラクティスを紹介し、業務効率の向上をサポートします。",
 	url: "https://astro-nomy.vercel.app",
 	ogImage: "https://astro-nomy.vercel.app/og.jpg",
 	links: {
-		twitter: "https://twitter.com/miickasmt",
-		github: "https://github.com/mickasmt/astro-nomy",
+		twitter: "x.com/ca_developers",
+		github: "https://github.com/ca-dp/productivity-discovery",
 	},
 };
 
+// TODO
 export const footerLinks: SidebarNavItem[] = [
-	{
+	/*{
 		title: "Company",
 		items: [
 			{ title: "About", href: "#" },
@@ -39,5 +40,5 @@ export const footerLinks: SidebarNavItem[] = [
 			{ title: "Components", href: "#" },
 			{ title: "Code Blocks", href: "#" },
 		],
-	},
+	},*/
 ];
