@@ -18,15 +18,15 @@ export type SidebarNavItem = {
 	disabled?: boolean;
 	external?: boolean;
 } & (
-	| {
+		| {
 			href: string;
 			items?: never;
-	  }
-	| {
+		}
+		| {
 			href?: string;
 			items: MenuItem[];
-	  }
-);
+		}
+	);
 
 export type SiteConfig = {
 	name: string;
@@ -49,8 +49,8 @@ export type MarketingConfig = {
 };
 
 export type NavMenuConfig = {
-	pagesNav: SidebarNavItem[];
-	examplesNav: SidebarNavItem[];
+	// pagesNav: SidebarNavItem[];
+	// examplesNav: SidebarNavItem[];
 	links: MenuItem[];
 };
 

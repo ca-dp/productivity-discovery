@@ -15,8 +15,8 @@ import { cn } from "@/lib/utils";
 import type { MenuItem } from "@/types";
 
 const links = navMenuConfig.links;
-const pages = navMenuConfig.pagesNav[0];
-const examples = navMenuConfig.examplesNav[0];
+const pages = []; //navMenuConfig.pagesNav[0];
+const examples = []; //navMenuConfig.examplesNav[0];
 
 export function MainNavigationMenu() {
 	return (
@@ -49,7 +49,8 @@ export function MainNavigationMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem> */}
 
-				<NavigationMenuItem>
+
+				{/* <NavigationMenuItem>
 					<NavigationMenuTrigger>{pages.title}</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
@@ -69,7 +70,7 @@ export function MainNavigationMenu() {
 							))}
 						</ul>
 					</NavigationMenuContent>
-				</NavigationMenuItem>
+				</NavigationMenuItem>  */}
 
 				{links ? (
 					<NavigationMenuItem>
