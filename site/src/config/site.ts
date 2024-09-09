@@ -1,4 +1,4 @@
-import type { SidebarNavItem, SiteConfig } from "site/src/types";
+import type { SidebarNavItem, SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
 	name: "Astronomy",

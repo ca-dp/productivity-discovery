@@ -1,7 +1,7 @@
 import * as React from "react";
 
-import type { TableOfContents } from "site/src/lib/toc";
-import { cn } from "site/src/lib/utils";
+import type { TableOfContents } from "@/lib/toc";
+import { cn } from "@/lib/utils";
 
 interface TocProps {
 	toc: TableOfContents;
@@ -10,10 +10,10 @@ interface TocProps {
 export function DashboardTableOfContents({ toc }: TocProps) {
 	const itemIds = toc.items
 		? toc.items
-				.flatMap((item) => [item.url, item?.items?.map((item) => item.url)])
-				.flat()
-				.filter(Boolean)
-				.map((id) => id?.split("#")[1])
+			.flatMap((item) => [item.url, item?.items?.map((item) => item.url)])
+			.flat()
+			.filter(Boolean)
+			.map((id) => id?.split("#")[1])
 		: [];
 	const activeHeading = useActiveItem(itemIds);
 

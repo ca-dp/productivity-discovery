@@ -1,7 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import GuidePostLayout from "@/layouts/guide-post.astro";
-import { MdxComponents } from "site/src/components/content/mdx-components";
+import { MdxComponents } from "@/components/content/mdx-components";
 
 export async function getStaticPaths() {
 	const guides = await getCollection("guides");

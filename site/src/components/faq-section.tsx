@@ -3,7 +3,7 @@ import {
 	AccordionContent,
 	AccordionItem,
 	AccordionTrigger,
-} from "site/src/components/ui/accordion";
+} from "@/components/ui/accordion";
 
 const faqData = [
 	{

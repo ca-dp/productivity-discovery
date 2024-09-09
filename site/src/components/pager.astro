@@ -1,9 +1,9 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon/components";
-import { buttonVariants } from "site/src/components/ui/button";
-import { docsConfig } from "site/src/config/docs";
-import { cn } from "site/src/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
+import { docsConfig } from "@/config/docs";
+import { cn } from "@/lib/utils";
 
 type Props = {
 	slug: CollectionEntry<"docs">["slug"];

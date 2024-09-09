@@ -2,7 +2,7 @@
 import BlogHeader from "@/components/blog-header.astro";
 import BlogCard from "@/components/cards/blog-card.astro";
 import MainLayout from "@/layouts/main-layout.astro";
-import { getPosts } from "site/src/lib/fetchers";
+import { getPosts } from "@/lib/fetchers";
 
 const posts = await getPosts();
 ---

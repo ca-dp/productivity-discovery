@@ -3,7 +3,7 @@ import type * as React from "react";
 import { Image } from "astro:assets";
 import Callout from "@/components/callout.astro";
 import MdxCard from "@/components/content/mdx-card.astro";
-import { cn } from "site/src/lib/utils";
+import { cn } from "@/lib/utils";
 
 type Props = {
 	className?: string;

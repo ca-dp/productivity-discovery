@@ -2,9 +2,9 @@
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon/components";
-import { Badge } from "site/src/components/ui/badge";
-import { buttonVariants } from "site/src/components/ui/button";
-import { cn, formatDate } from "site/src/lib/utils";
+import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
+import { cn, formatDate } from "@/lib/utils";
 import MainLayout from "./main-layout.astro";
 
 type Props = CollectionEntry<"blog">;

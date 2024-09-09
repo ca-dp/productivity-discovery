@@ -1,15 +1,15 @@
 import * as React from "react";
 
-import { Button } from "site/src/components/ui/button";
-import { ScrollArea } from "site/src/components/ui/scroll-area";
+import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import {
 	Sheet,
 	SheetContent,
 	SheetTrigger,
-} from "site/src/components/ui/sheet";
-import { siteConfig } from "site/src/config/site";
-import { Icons } from "site/src/icons";
-import type { MainNavItem, SidebarNavItem } from "site/src/types";
+} from "@/components/ui/sheet";
+import { siteConfig } from "@/config/site";
+import { Icons } from "@/icons";
+import type { MainNavItem, SidebarNavItem } from "@/types";
 
 interface SheetMobileProps {
 	mainNavItems?: MainNavItem[];

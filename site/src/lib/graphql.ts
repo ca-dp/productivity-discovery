@@ -1,12 +1,12 @@
 import { addDays, getUnixTime, subDays } from "date-fns";
-import { getSeasonInfo } from "site/src/lib/utils";
-import type { Airing, Media } from "site/src/types";
+import { getSeasonInfo } from "@/lib/utils";
+import type { Airing, Media } from "@/types";
 
 const graphqlAPI = "https://graphql.anilist.co/";
 
 export const getPlanningAnimes = async () => {
-	const { season, seasonYear, nextSeason, nextYear } = await getSeasonInfo();
-	const query = `
+  const { season, seasonYear, nextSeason, nextYear } = await getSeasonInfo();
+  const query = `
     query getMedias(
       $season: MediaSeason
       $seasonYear: Int
@@ -89,44 +89,44 @@ export const getPlanningAnimes = async () => {
     }
   `;
 
-	const response = await fetch(graphqlAPI, {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-			Accept: "application/json",
-		},
-		body: JSON.stringify({
-			query: query,
-			variables: {
-				season: season,
-				seasonYear: seasonYear,
-				nextSeason: nextSeason,
-				nextYear: nextYear,
-				latestAiringStart: getUnixTime(subDays(new Date(), 1)),
-				latestAiringEnd: getUnixTime(new Date()),
-				futureAiringStart: getUnixTime(new Date()),
-				futureAiringEnd: getUnixTime(addDays(new Date(), 1)),
-			},
-		}),
-	});
+  const response = await fetch(graphqlAPI, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      query: query,
+      variables: {
+        season: season,
+        seasonYear: seasonYear,
+        nextSeason: nextSeason,
+        nextYear: nextYear,
+        latestAiringStart: getUnixTime(subDays(new Date(), 1)),
+        latestAiringEnd: getUnixTime(new Date()),
+        futureAiringStart: getUnixTime(new Date()),
+        futureAiringEnd: getUnixTime(addDays(new Date(), 1)),
+      },
+    }),
+  });
 
-	const { data } = await response.json();
+  const { data } = await response.json();
 
-	const trending: Media[] = data.trending.media;
-	const upcomingSeason: Media[] = data.nextSeason.media;
+  const trending: Media[] = data.trending.media;
+  const upcomingSeason: Media[] = data.nextSeason.media;
 
-	const latestAiring: Airing[] = data?.latestAiring?.airingSchedules.filter(
-		(airing: Airing) => airing.media.isAdult == false,
-	);
+  const latestAiring: Airing[] = data?.latestAiring?.airingSchedules.filter(
+    (airing: Airing) => airing.media.isAdult == false,
+  );
 
-	const futureAiring: Airing[] = data?.futureAiring?.airingSchedules.filter(
-		(airing: Airing) => airing.media.isAdult == false,
-	);
+  const futureAiring: Airing[] = data?.futureAiring?.airingSchedules.filter(
+    (airing: Airing) => airing.media.isAdult == false,
+  );
 
-	return {
-		trending,
-		upcomingSeason,
-		latestAiring,
-		futureAiring,
-	};
+  return {
+    trending,
+    upcomingSeason,
+    latestAiring,
+    futureAiring,
+  };
 };

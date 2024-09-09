@@ -9,9 +9,9 @@ import {
 	TabsContent,
 	TabsList,
 	TabsTrigger,
-} from "site/src/components/ui/tabs";
-import { Icons } from "site/src/icons";
-import type { Airing, Media } from "site/src/types";
+} from "@/components/ui/tabs";
+import { Icons } from "@/icons";
+import type { Airing, Media } from "@/types";
 
 interface AnimesTabsProps {
 	animes: {
@@ -109,8 +109,8 @@ function AnimeCard({ data }: { data: Media | Airing }) {
 					<p className="flex text-xs sm:text-[13px] font-medium text-muted-foreground line-clamp-1">
 						{isPast(fromUnixTime(airingAt))
 							? formatDistanceToNowStrict(fromUnixTime(airingAt), {
-									addSuffix: true,
-								})
+								addSuffix: true,
+							})
 							: format(fromUnixTime(airingAt), "p")}
 						&nbsp; • &nbsp;Ep. {episode}
 					</p>

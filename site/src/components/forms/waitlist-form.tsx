@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Button } from "site/src/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
 	Form,
 	FormControl,
@@ -9,8 +9,8 @@ import {
 	FormItem,
 	FormLabel,
 	FormMessage,
-} from "site/src/components/ui/form";
-import { Input } from "site/src/components/ui/input";
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { z } from "zod";
 

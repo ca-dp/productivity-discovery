@@ -2,8 +2,8 @@
 import { getCollection } from "astro:content";
 import PageHeader from "@/components/page-header.astro";
 import MainLayout from "@/layouts/main-layout.astro";
-import { Badge } from "site/src/components/ui/badge";
-import { formatDate } from "site/src/lib/utils";
+import { Badge } from "@/components/ui/badge";
+import { formatDate } from "@/lib/utils";
 
 const posts = await getCollection("releases");
 posts.sort((a, b) => +b.data.date - +a.data.date);

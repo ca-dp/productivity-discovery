@@ -1,4 +1,4 @@
-import type { NavMenuConfig } from "site/src/types";
+import type { NavMenuConfig } from "@/types";
 
 export const navMenuConfig: NavMenuConfig = {
 	pagesNav: [

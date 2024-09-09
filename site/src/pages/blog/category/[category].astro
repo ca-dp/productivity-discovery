@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import BlogHeader from "@/components/blog-header.astro";
 import BlogCard from "@/components/cards/blog-card.astro";
 import MainLayout from "@/layouts/main-layout.astro";
-import { capitalizer } from "site/src/lib/utils";
+import { capitalizer } from "@/lib/utils";
 
 export async function getStaticPaths() {
 	const allPosts = await getCollection("blog");

@@ -1,6 +1,6 @@
 import type * as React from "react";
 
-import { Badge } from "site/src/components/ui/badge";
+import { Badge } from "@/components/ui/badge";
 import {
 	NavigationMenu,
 	NavigationMenuContent,
@@ -8,11 +8,11 @@ import {
 	NavigationMenuList,
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
-} from "site/src/components/ui/navigation-menu";
-import { navMenuConfig } from "site/src/config/nav-menu";
-import { Icons } from "site/src/icons";
-import { cn } from "site/src/lib/utils";
-import type { MenuItem } from "site/src/types";
+} from "@/components/ui/navigation-menu";
+import { navMenuConfig } from "@/config/nav-menu";
+import { Icons } from "@/icons";
+import { cn } from "@/lib/utils";
+import type { MenuItem } from "@/types";
 
 const links = navMenuConfig.links;
 const pages = navMenuConfig.pagesNav[0];

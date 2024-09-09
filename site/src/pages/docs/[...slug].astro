@@ -5,11 +5,11 @@ import DocsPageHeader from "@/components/page-header.astro";
 import DocsPager from "@/components/pager.astro";
 import DocsLayout from "@/layouts/docs-layout.astro";
 import { Icon } from "astro-icon/components";
-import { MdxComponents } from "site/src/components/content/mdx-components";
-import { DashboardTableOfContents } from "site/src/components/toc";
-import { ScrollArea } from "site/src/components/ui/scroll-area";
-import { docsConfig } from "site/src/config/docs";
-import { getTableOfContents } from "site/src/lib/toc";
+import { MdxComponents } from "@/components/content/mdx-components";
+import { DashboardTableOfContents } from "@/components/toc";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { docsConfig } from "@/config/docs";
+import { getTableOfContents } from "@/lib/toc";
 
 export async function getStaticPaths() {
 	const docs = await getCollection("docs");

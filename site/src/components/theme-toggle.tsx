@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { useMounted } from "site/src/hooks/use-mounted";
+import { useMounted } from "@/hooks/use-mounted";
 
 const SunIcon = () => (
 	<>

@@ -1,4 +1,4 @@
-import type { InfoLdg } from "site/src/types";
+import type { InfoLdg } from "@/types";
 
 export const infos: InfoLdg[] = [
 	{

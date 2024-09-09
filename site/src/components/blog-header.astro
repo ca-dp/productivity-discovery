@@ -1,8 +1,8 @@
 ---
 import { Icon } from "astro-icon/components";
-import { buttonVariants } from "site/src/components/ui/button";
-import { getCategories } from "site/src/lib/fetchers";
-import { cn } from "site/src/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
+import { getCategories } from "@/lib/fetchers";
+import { cn } from "@/lib/utils";
 
 const categories = await getCategories();
 

@@ -1,10 +1,10 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon/components";
-import { DashboardTableOfContents } from "site/src/components/toc";
-import { buttonVariants } from "site/src/components/ui/button";
-import { getTableOfContents } from "site/src/lib/toc";
-import { cn, formatDate } from "site/src/lib/utils";
+import { DashboardTableOfContents } from "@/components/toc";
+import { buttonVariants } from "@/components/ui/button";
+import { getTableOfContents } from "@/lib/toc";
+import { cn, formatDate } from "@/lib/utils";
 import DocsLayout from "./docs-layout.astro";
 
 type Props = CollectionEntry<"guides">;
