@@ -1,0 +1,78 @@
+---
+import MainLayout from "@/layouts/main-layout.astro";
+import { Icon } from 'astro-icon/components';
+
+export function getStaticPaths() {
+  return [
+    {params: {name: 'cursor'}},
+    {params: {name: 'vscode'}},
+    // Add other tools...
+  ];
+}
+
+const { name } = Astro.params;
+
+const toolData = {
+  'cursor': {
+    name: 'Cursor',
+    website: 'cursor.com',
+    description: 'AIを活用したコーディング支援機能を持つ次世代IDE',
+    features: [
+      'AIによるコード補完と生成',
+      'GitHubとの統合',
+      '軽量で高速な動作',
+      'リアルタイムコラボレーション機能',
+    ],
+    pricing: '無料版あり、プロ版は月額$20',
+    ctaText: '利用申請する',
+    ctaLink: 'https://cyberagent3911.zendesk.com/hc/ja/requests/new?ticket_form_id=33319367017241',
+  },
+  'vscode': {
+    name: 'Visual Studio Code',
+    website: 'code.visualstudio.com',
+    description: 'Microsoftが開発した無料で多機能なコードエディタ',
+    features: [
+      '豊富な拡張機能',
+      '多言語サポート',
+      'Gitとの優れた統合',
+      'デバッグ機能',
+    ],
+    pricing: '無料',
+    ctaText: '利用申請する',
+    ctaLink: 'https://cyberagent3911.zendesk.com/hc/ja/requests/new?ticket_form_id=33319367017241',
+  },
+  // Add data for other tools...
+};
+
+const tool = toolData[name];
+---
+
+<MainLayout title={tool.name}>
+  <section class="py-20">
+    <div class="container mx-auto">
+      <div class="flex items-center justify-center mb-8">
+        <img src={`https://cdn.brandfetch.io/${tool.website}/w/400/h/400`} alt={tool.name} width="64" height="64" class="mr-4" />
+        <h1 class="text-4xl font-bold">{tool.name}</h1>
+      </div>
+      <p class="text-xl text-center mb-8">{tool.description}</p>
+      <div class="mb-12">
+        <h2 class="text-2xl font-semibold mb-4">主な機能</h2>
+        <ul class="list-disc list-inside">
+          {tool.features.map(feature => (
+            <li class="text-lg mb-2">{feature}</li>
+          ))}
+        </ul>
+      </div>
+      <div class="mb-12">
+        <h2 class="text-2xl font-semibold mb-4">価格</h2>
+        <p class="text-lg">{tool.pricing}</p>
+      </div>
+      <div class="text-center">
+        <a href={tool.ctaLink} class="bg-blue-600 text-white hover:bg-blue-700 font-bold py-3 px-8 rounded-full transition duration-300 text-lg inline-flex items-center">
+          <Icon name="heroicons:clipboard-document-list" class="w-6 h-6 mr-2" />
+          {tool.ctaText}
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

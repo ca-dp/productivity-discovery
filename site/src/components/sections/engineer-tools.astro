@@ -1,12 +1,10 @@
 ---
-import { Icon } from '@iconify/react';
-
 const tools = [
-  { name: "IDEs", examples: "Cursor, VSCode, IntelliJ IDEA", icon: "vscode-icons:file-type-vscode" },
-  { name: "タスク管理", examples: "JIRA, Linear", icon: "logos:jira" },
-  { name: "バージョン管理", examples: "Git, GitHub, GitLab", icon: "logos:git-icon" },
-  { name: "CI/CD", examples: "Jenkins, GitLab CI, GitHub Actions", icon: "logos:jenkins" },
-  { name: "コード品質", examples: "SonarQube, ESLint, Prettier", icon: "logos:sonarqube" }
+  { name: "IDEs", examples: "Cursor, VSCode, IntelliJ IDEA", website: "cursor.com" },
+  { name: "タスク管理", examples: "JIRA, Linear", website: "atlassian.com" },
+  { name: "バージョン管理", examples: "Git, GitHub, GitLab", website: "github.com" },
+  { name: "CI/CD", examples: "Jenkins, GitLab CI, GitHub Actions", website: "jenkins.io" },
+  { name: "コード品質", examples: "SonarQube, ESLint, Prettier", website: "sonarqube.org" }
 ];
 ---
 
@@ -18,7 +16,7 @@ const tools = [
       {tools.map(tool => (
         <div class="bg-gray-100 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300">
           <div class="flex items-center mb-4">
-            <Icon icon={tool.icon} width="32" height="32" class="mr-3" />
+            <img src={`https://cdn.brandfetch.io/${tool.website}/w/400/h/400`} alt={tool.name} width="32" height="32" class="mr-3" />
             <h3 class="text-xl font-semibold">{tool.name}</h3>
           </div>
           <p class="text-gray-600">{tool.examples}</p>

@@ -1,0 +1,55 @@
+---
+import MainLayout from "@/layouts/main-layout.astro";
+import ToolComparison from "@/components/sections/tool-comparison.astro";
+import { Icon } from 'astro-icon/components';
+
+export function getStaticPaths() {
+  return [
+    {params: {slug: 'ide'}, props: {icon: "mdi:code", gradient: "from-blue-500 to-cyan-500"}},
+    {params: {slug: 'task-management'}, props: {icon: "carbon:task", gradient: "from-green-500 to-teal-500"}},
+    {params: {slug: 'version-control'}, props: {icon: "mdi:git", gradient: "from-purple-500 to-pink-500"}},
+    {params: {slug: 'ci-cd'}, props: {icon: "mdi:pipe", gradient: "from-yellow-500 to-orange-500"}},
+    {params: {slug: 'code-quality'}, props: {icon: "carbon:data-check", gradient: "from-red-500 to-pink-500"}},
+  ];
+}
+
+const { slug } = Astro.params;
+const { icon, gradient } = Astro.props;
+
+const categoryData = {
+  'ide': {
+    title: 'IDE比較',
+    tools: ['Cursor', 'VSCode', 'IntelliJ IDEA', 'Sublime Text'],
+  },
+  'task-management': {
+    title: 'タスク管理ツール比較',
+    tools: ['JIRA', 'Linear', 'Asana', 'Trello'],
+  },
+  // Add data for other categories...
+};
+
+const category = categoryData[slug];
+---
+
+<MainLayout title={category ? category.title : 'Category Not Found'}>
+  {category ? (
+    <section class={`py-20 bg-gradient-to-br ${gradient}`}>
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-center mb-12">
+          <Icon name={icon} class="w-16 h-16 text-white mr-4" />
+          <h1 class="text-4xl font-bold text-white">{category.title}</h1>
+        </div>
+        <div class="bg-white rounded-lg shadow-xl p-8">
+          <ToolComparison category={category.title} tools={category.tools} />
+        </div>
+      </div>
+    </section>
+  ) : (
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl font-bold text-center">Category Not Found</h1>
+        <p class="text-center mt-4">The requested category does not exist.</p>
+      </div>
+    </section>
+  )}
+</MainLayout>

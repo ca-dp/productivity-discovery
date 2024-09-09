@@ -1,0 +1,28 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const featuredTool = {
+  name: "Cursor",
+  description: "AIパワードの次世代IDE",
+  ctaText: "今すぐ試す",
+  ctaLink: "/tool/cursor",
+  website: "cursor.com"
+};
+---
+
+<section class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
+  <div class="container mx-auto text-center px-4">
+    <h2 class="text-3xl font-bold mb-6">注目のツール</h2>
+    <div class="bg-white/10 backdrop-blur-lg rounded-xl p-8 max-w-2xl mx-auto">
+      <div class="flex justify-center items-center mb-6">
+        <img src={`https://cdn.brandfetch.io/${featuredTool.website}/w/400/h/400`} alt={featuredTool.name} width="64" height="64" class="mr-4" />
+        <h3 class="text-4xl font-bold">{featuredTool.name}</h3>
+      </div>
+      <p class="text-xl mb-8">{featuredTool.description}</p>
+      <a href={featuredTool.ctaLink} class="bg-white text-indigo-600 hover:bg-indigo-100 font-bold py-3 px-8 rounded-full transition duration-300 text-lg inline-flex items-center">
+        <Icon name="heroicons:sparkles" class="w-6 h-6 mr-2" />
+        {featuredTool.ctaText}
+      </a>
+    </div>
+  </div>
+</section>

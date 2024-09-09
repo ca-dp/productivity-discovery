@@ -1,0 +1,32 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface CategoryProps {
+  name: string;
+  slug: string;
+  featuredTool: string;
+  icon: string;
+  gradient: string;
+}
+
+interface Props {
+  category: CategoryProps;
+}
+
+const { category } = Astro.props;
+---
+
+<div class={`bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl`}>
+  <div class={`h-2 bg-gradient-to-r ${category.gradient}`}></div>
+  <div class="p-6">
+    <div class="flex items-center mb-4">
+      <Icon name={category.icon} class="w-8 h-8 mr-3 text-gray-700" />
+      <h3 class="text-xl font-semibold text-gray-800">{category.name}</h3>
+    </div>
+    <p class="text-gray-600 mb-4">おすすめツール: {category.featuredTool}</p>
+    <a href={`/category/${category.slug}`} class="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold transition duration-300">
+      詳細を見る
+      <Icon name="heroicons:arrow-right" class="w-5 h-5 ml-2" />
+    </a>
+  </div>
+</div>

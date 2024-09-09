@@ -1,31 +1,31 @@
 ---
-import HeroProductivity from "@/components/sections/hero-productivity.astro";
-import EngineerTools from "@/components/sections/engineer-tools.astro";
-import ComingSoon from "@/components/sections/coming-soon.astro";
-import ToolComparison from "@/components/sections/tool-comparison.astro";
-import FeaturedBanner from "@/components/sections/featured-banner.astro";
-
 import MainLayout from "@/layouts/main-layout.astro";
+import HeroProductivity from "@/components/sections/hero-productivity.astro";
+import CategoryPreview from "@/components/sections/category-preview.astro";
+import FeaturedTool from "@/components/sections/featured-tool.astro";
 
-const ideTools = [
-  { name: "Cursor" },
-  { name: "VSCode" },
-  { name: "GitHub Copilot" },
-  { name: "IntelliJ IDEA" }
-];
-
-const taskManagementTools = [
-  { name: "JIRA" },
-  { name: "Linear" }
+const categories = [
+  { name: "IDE", slug: "ide", featuredTool: "Cursor", icon: "mdi:code", gradient: "from-blue-500 to-cyan-500" },
+  { name: "タスク管理", slug: "task-management", featuredTool: "Linear", icon: "carbon:task", gradient: "from-green-500 to-teal-500" },
+  { name: "バージョン管理", slug: "version-control", featuredTool: "GitHub", icon: "mdi:git", gradient: "from-purple-500 to-pink-500" },
+  { name: "CI/CD", slug: "ci-cd", featuredTool: "GitHub Actions", icon: "mdi:pipe", gradient: "from-yellow-500 to-orange-500" },
+  { name: "コード品質", slug: "code-quality", featuredTool: "SonarQube", icon: "carbon:data-check", gradient: "from-red-500 to-pink-500" },
 ];
 ---
 
 <MainLayout title="生産性ポータル">
   <HeroProductivity />
-  <EngineerTools />
-  <ToolComparison category="IDE" tools={ideTools} />
-  <FeaturedBanner />
-  <ToolComparison category="タスク管理" tools={taskManagementTools} />
-  <ComingSoon title="デザイナー向け" />
-  <ComingSoon title="ビジネス向け" />
+  
+  <section class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">カテゴリー別おすすめツール</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {categories.map(category => (
+          <CategoryPreview category={category} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FeaturedTool />
 </MainLayout>
