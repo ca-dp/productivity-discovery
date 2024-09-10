@@ -44,7 +44,10 @@ const { category, isMain = false } = Astro.props;
             </div>
           )}
         </div>
-        <p class="text-gray-700 font-medium mb-4 featured-tool">おすすめツール: {category.featuredTool}</p>
+        <div class="flex items-center mb-4">
+          <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">おすすめ</span>
+          <p class="text-gray-700 font-medium featured-tool">{category.featuredTool}</p>
+        </div>
         <div class="mt-auto flex justify-end">
           <div class="inline-flex items-center text-sm text-blue-600 font-semibold transition duration-300 hover:text-blue-800">
             比較・導入へ
