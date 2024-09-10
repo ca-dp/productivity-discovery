@@ -19,5 +19,33 @@ export const toolData = {
             "定期的にソフトウェアを更新し、最新のセキュリティパッチを適用してください。"
         ]
     },
+    "Stately": {
+        name: "Stately",
+        website: "stately.ai",
+        description: "ビジュアルステートマシンエディタとコード生成ツール",
+        pros: [
+            "直感的なビジュアルエディタ",
+            "複雑な状態遷移の可視化",
+            "TypeScriptコード生成機能",
+            "XStateとの統合"
+        ],
+        cons: [
+            "学習曲線が比較的高い",
+            "小規模プロジェクトには過剰な場合がある"
+        ],
+        bestFor: "複雑な状態管理を必要とする大規模アプリケーションの開発者",
+        ctaLink: "https://cyberagent3911.zendesk.com/hc/ja/requests/new?ticket_form_id=33319367017241",
+        securityStatus: "確認中",
+        securityDetails: "セキュリティ評価プロセスを進行中です。",
+        legalStatus: "確認中",
+        legalDetails: "利用規約の確認を行っています。",
+        contractStatus: "未確認",
+        contractDetails: "契約条件の確認が必要です。",
+        precautions: [
+            "生成されたコードは必ずレビューしてください。",
+            "機密情報を含む状態遷移図は慎重に扱ってください。",
+            "定期的にツールのアップデートを確認し、最新版を使用してください。"
+        ]
+    },
     // ... other tools
 };
