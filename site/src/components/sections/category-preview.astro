@@ -9,6 +9,7 @@ interface CategoryProps {
   gradient: string;
   screenshot: string;
   isMain?: boolean;
+  internal: boolean;
 }
 
 interface Props {
@@ -28,7 +29,14 @@ const { category, isMain = false } = Astro.props;
       </div>
     </div>
     <div class="bg-white p-4">
-      <img src={category.screenshot} alt={category.featuredTool} class={`w-full object-cover rounded-md mb-4 ${isMain ? 'h-64' : 'h-48'}`} />
+      <div class="relative">
+        <img src={category.screenshot} alt={category.featuredTool} class={`w-full object-cover rounded-md mb-4 ${isMain ? 'h-64' : 'h-48'}`} />
+        {category.internal && (
+          <div class="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-md">
+            社内製
+          </div>
+        )}
+      </div>
       <p class="text-gray-700 font-medium mb-4">おすすめツール: {category.featuredTool}</p>
       <a href={`/category/${category.slug}`} class="inline-flex items-center text-blue-600 font-semibold transition duration-300 hover:text-blue-800">
         詳細を見る
