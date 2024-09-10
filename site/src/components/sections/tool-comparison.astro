@@ -9,6 +9,9 @@ interface ToolInfo {
   cons: string[];
   bestFor: string;
   ctaLink: string;
+  securityStatus: string;
+  legalStatus: string;
+  contractStatus: string;
 }
 
 interface Props {
@@ -18,6 +21,10 @@ interface Props {
 
 const { category, tools } = Astro.props;
 
+const statusOptions = ['未確認', '確認中', '承認済み', '要対応'];
+
+const getRandomStatus = () => statusOptions[Math.floor(Math.random() * statusOptions.length)];
+
 const toolData: { [key: string]: ToolInfo } = {
   "Cursor": {
     name: "Cursor",
@@ -26,7 +33,10 @@ const toolData: { [key: string]: ToolInfo } = {
     pros: ["AIによるコード補完と生成", "GitHubとの統合", "軽量で高速"],
     cons: ["比較的新しいため、機能が限定的", "大規模プロジェクトでの使用実績が少ない"],
     bestFor: "AIの支援を受けながら迅速に開発したい個人開発者や小規模チーム",
-    ctaLink: "https://cyberagent3911.zendesk.com/hc/ja/requests/new?ticket_form_id=33319367017241"
+    ctaLink: "https://cyberagent3911.zendesk.com/hc/ja/requests/new?ticket_form_id=33319367017241",
+    securityStatus: getRandomStatus(),
+    legalStatus: getRandomStatus(),
+    contractStatus: getRandomStatus(),
   },
   "VSCode": {
     name: "Visual Studio Code",
@@ -35,7 +45,10 @@ const toolData: { [key: string]: ToolInfo } = {
     pros: ["豊富な拡張機能", "多言語サポート", "Gitとの優れた統合"],
     cons: ["大規模プロジェクトで少し重くなることがある", "設定の複雑さ"],
     bestFor: "幅広い言語やフレームワークを使用する開発者",
-    ctaLink: "https://cyberagent3911.zendesk.com/hc/ja/requests/new?ticket_form_id=33319367017241"
+    ctaLink: "https://cyberagent3911.zendesk.com/hc/ja/requests/new?ticket_form_id=33319367017241",
+    securityStatus: getRandomStatus(),
+    legalStatus: getRandomStatus(),
+    contractStatus: getRandomStatus(),
   },
   "GitHub Copilot": {
     name: "GitHub Copilot",
@@ -44,7 +57,10 @@ const toolData: { [key: string]: ToolInfo } = {
     pros: ["高度なコード提案", "多言語サポート", "継続的な学習と改善"],
     cons: ["サブスクリプション形式で有料", "プライバシーの懸念"],
     bestFor: "生産性を大幅に向上させたい経験豊富な開発者",
-    ctaLink: "https://cyberagent3911.zendesk.com/hc/ja/requests/new?ticket_form_id=33319367017241"
+    ctaLink: "https://cyberagent3911.zendesk.com/hc/ja/requests/new?ticket_form_id=33319367017241",
+    securityStatus: getRandomStatus(),
+    legalStatus: getRandomStatus(),
+    contractStatus: getRandomStatus(),
   },
   "IntelliJ IDEA": {
     name: "IntelliJ IDEA",
@@ -53,7 +69,10 @@ const toolData: { [key: string]: ToolInfo } = {
     pros: ["強力なコード分析と最適化提案", "優れたデバッグ機能", "豊富な統合ツール"],
     cons: ["有料版は高価", "リソース消費が大きい"],
     bestFor: "Javaを中心とした大規模エンタープライズ開発",
-    ctaLink: "https://cyberagent3911.zendesk.com/hc/ja/requests/new?ticket_form_id=33319367017241"
+    ctaLink: "https://cyberagent3911.zendesk.com/hc/ja/requests/new?ticket_form_id=33319367017241",
+    securityStatus: getRandomStatus(),
+    legalStatus: getRandomStatus(),
+    contractStatus: getRandomStatus(),
   },
   "JIRA": {
     name: "JIRA",
@@ -62,7 +81,10 @@ const toolData: { [key: string]: ToolInfo } = {
     pros: ["カスタマイズ性が高い", "アジャイル開発に適している", "他のAtlassian製品との連携"],
     cons: ["学習曲線が急", "大規模チームでは複雑になりがち"],
     bestFor: "アジャイル手法を採用している中〜大規模チーム",
-    ctaLink: "https://cyberagent3911.zendesk.com/hc/ja/requests/new?ticket_form_id=33319367017241"
+    ctaLink: "https://cyberagent3911.zendesk.com/hc/ja/requests/new?ticket_form_id=33319367017241",
+    securityStatus: getRandomStatus(),
+    legalStatus: getRandomStatus(),
+    contractStatus: getRandomStatus(),
   },
   "Linear": {
     name: "Linear",
@@ -71,8 +93,47 @@ const toolData: { [key: string]: ToolInfo } = {
     pros: ["直感的なUI", "高速な操作性", "GitHubとの優れた統合"],
     cons: ["JIRAほど機能が豊富ではない", "大規模プロジェクトでの使用実績が少ない"],
     bestFor: "スタートアップや小〜中規模のソフトウェア開発チーム",
-    ctaLink: "https://cyberagent3911.zendesk.com/hc/ja/requests/new?ticket_form_id=33319367017241"
-  }
+    ctaLink: "https://cyberagent3911.zendesk.com/hc/ja/requests/new?ticket_form_id=33319367017241",
+    securityStatus: getRandomStatus(),
+    legalStatus: getRandomStatus(),
+    contractStatus: getRandomStatus(),
+  },
+  "Claude": {
+    name: "Claude",
+    website: "claude.ai",
+    description: "高度なAIアシスタント",
+    pros: ["高度な自然言語理解", "迅速な応答", "多言語サポート"],
+    cons: ["有料サービス", "学習曲線がある"],
+    bestFor: "AIを活用したタスク自動化や情報検索に興味のあるユーザー",
+    ctaLink: "https://cyberagent3911.zendesk.com/hc/ja/requests/new?ticket_form_id=33319367017241",
+    securityStatus: getRandomStatus(),
+    legalStatus: getRandomStatus(),
+    contractStatus: getRandomStatus(),
+  },
+  "Genspark": {
+    name: "Genspark",
+    website: "genspark.com",
+    description: "AI検索エンジン",
+    pros: ["高度な検索機能", "迅速な結果提供", "多言語サポート"],
+    cons: ["有料サービス", "学習曲線がある"],
+    bestFor: "高度な検索要件を持つユーザー",
+    ctaLink: "https://cyberagent3911.zendesk.com/hc/ja/requests/new?ticket_form_id=33319367017241",
+    securityStatus: getRandomStatus(),
+    legalStatus: getRandomStatus(),
+    contractStatus: getRandomStatus(),
+  },
+  "Dify": {
+    name: "Dify",
+    website: "dify.ai",
+    description: "ビジュアルAIエージェントビルダー",
+    pros: ["ユーザーフレンドリーなインターフェース", "迅速な実装", "多言語サポート"],
+    cons: ["有料サービス", "学習曲線がある"],
+    bestFor: "AIエージェントの実装に興味のあるユーザー",
+    ctaLink: "https://cyberagent3911.zendesk.com/hc/ja/requests/new?ticket_form_id=33319367017241",
+    securityStatus: getRandomStatus(),
+    legalStatus: getRandomStatus(),
+    contractStatus: getRandomStatus(),
+  },
 };
 
 // Filter out any tools that don't exist in toolData
@@ -105,6 +166,11 @@ const validTools = tools.filter(toolName => toolName in toolData);
               ))}
             </ul>
             <p class="text-sm text-gray-800 mb-4"><span class="font-semibold">最適な用途:</span> {tool.bestFor}</p>
+            <div class="mb-4">
+              <p class="text-sm"><span class="font-semibold">セキュリティチェック:</span> <span class={`px-2 py-1 rounded ${tool.securityStatus === '承認済み' ? 'bg-green-200 text-green-800' : 'bg-yellow-200 text-yellow-800'}`}>{tool.securityStatus}</span></p>
+              <p class="text-sm"><span class="font-semibold">法務チェック:</span> <span class={`px-2 py-1 rounded ${tool.legalStatus === '承認済み' ? 'bg-green-200 text-green-800' : 'bg-yellow-200 text-yellow-800'}`}>{tool.legalStatus}</span></p>
+              <p class="text-sm"><span class="font-semibold">契約ステータス:</span> <span class={`px-2 py-1 rounded ${tool.contractStatus === '承認済み' ? 'bg-green-200 text-green-800' : 'bg-yellow-200 text-yellow-800'}`}>{tool.contractStatus}</span></p>
+            </div>
             <div class="flex justify-between items-center">
               <a href={`/tool/${toolName.toLowerCase()}`} class="text-blue-600 hover:text-blue-800 font-semibold">
                 詳細を見る →
