@@ -6,6 +6,7 @@ import FeaturedTool from "@/components/sections/featured-tool.astro";
 import FreshProductivityPortal from "@/components/sections/FreshProductivityPortal.astro";
 import NewToolChallenge from "@/components/sections/NewToolChallenge.astro";
 import SocialProof from "@/components/sections/SocialProof.astro";
+import LastMinuteNews from "@/components/sections/LastMinuteNews.astro";
 
 const categories = [
   { 
@@ -140,19 +141,19 @@ const categories = [
     screenshot: "https://orbstack.dev/_next/image?url=%2Fimg%2Fhero.png&w=1920&q=75", 
     internal: false 
   },
-  // { 
-  //   name: "クラウドインフラ", 
-  //   slug: "cloud-infrastructure", 
-  //   description: "スケーラブルで柔軟なインフラストラクチャ",
-  //   copy: "クラウドサービスを活用して、効率的なインフラ管理を実現しましょう。",
-  //   featuredTool: "AWS", 
-  //   toolDescription: "包括的なクラウドコンピューティングプラットフォーム",
-  //   toolCopy: "スケーラブルで信頼性の高いインフラストラクチャを構築します。",
-  //   icon: "mdi:cloud", 
-  //   gradient: "from-yellow-500 to-orange-500", 
-  //   screenshot: "https://d1.awsstatic.com/Digital%20Marketing/House/Hero/products/EC2_General_Purpose_2up.69e882b588f8e961ab399c7ed4c35e4a4d09fd2d.png", 
-  //   internal: false 
-  // },
+  { 
+    name: "クラウドインフラ", 
+    slug: "cloud-infrastructure", 
+    description: "スケーラブルで柔軟なインフラストラクチャ",
+    copy: "クラウドサービスを活用して、効率的なインフラ管理を実現しましょう。",
+    featuredTool: "GCP", 
+    toolDescription: "包括的なクラウドコンピューティングプラットフォーム",
+    toolCopy: "スケーラブルで信頼性の高いインフラストラクチャを構築します。",
+    icon: "mdi:cloud", 
+    gradient: "from-yellow-500 to-orange-500", 
+    screenshot: "https://solace.com/wp-content/uploads/2019/04/GCP-diagram.png", 
+    internal: false 
+  },
   { 
     name: "モニタリング", 
     slug: "monitoring", 
@@ -189,7 +190,7 @@ const categories = [
     toolCopy: "ノート、データベース、プロジェクト管理を一元化します。",
     icon: "mdi:file-document", 
     gradient: "from-gray-500 to-blue-500", 
-    screenshot: "https://res.cloudinary.com/snyk/image/upload/v1701280100/illustration-ui-apprisk-priority.svg", 
+    screenshot: "https://www.notion.so/cdn-cgi/image/format=webp,width=3840/https://images.ctfassets.net/spoqsaf9291f/2ngxl8Xa5kOQyNTlf1j3DU/10f20c2e01395763f768a3410bc10582/Screenshot_2023-09-08_at_9.28.32_AM.png", 
     internal: false 
   },
   { 
@@ -328,9 +329,10 @@ const categories = [
 
 <MainLayout title="生産性ポータル">
   <HeroProductivity />
+  <FreshProductivityPortal />
+  <LastMinuteNews />
   <ToolCategories categories={categories} />
   <FeaturedTool />
-  <FreshProductivityPortal />
   <NewToolChallenge />
   <SocialProof />
 </MainLayout>
