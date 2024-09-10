@@ -5,6 +5,8 @@ import HeroProductivity from "@/components/sections/hero-productivity.astro";
 import CategoryPreview from "@/components/sections/category-preview.astro";
 import FeaturedTool from "@/components/sections/featured-tool.astro";
 import SearchBox from "@/components/SearchBox";
+import { Image } from 'astro:assets';
+import workFun from "@/assets/work-fun.svg";
 
 const categories = [
   { name: "IDE", slug: "ide", featuredTool: "Cursor", icon: "mdi:code", gradient: "from-blue-500 to-cyan-500", movie: "https://www.cursor.com/videos/cmdkloop2.mp4", isMain: true, internal: false },
@@ -32,6 +34,8 @@ const categories = [
 <MainLayout title="生産性ポータル">
   <HeroProductivity />
   
+  
+
   <section class="py-24 bg-gray-100">
     <div class="container mx-auto px-4">
       <div class="flex justify-between items-center mb-16">
@@ -50,6 +54,17 @@ const categories = [
   </section>
 
   <FeaturedTool />
+
+  <section class="py-12 bg-gray-100">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6 text-gray-800">みんなで作る生産性ポータル</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto p-6 rounded-xl shadow-lg bg-white">
+        <span class="font-bold">このポータルは、みんなの「やりたい」を応援します！</span><br>
+        <span class="italic">最高のツールを見つけて、楽しく効率的に仕事しよう。</span> <span class="font-semibold text-indigo-600">AIも味方につけて、もっとクリエイティブに。</span> <span class="underline decoration-wavy decoration-green-500">一緒に、サイバーエージェントらしい新しい働き方を作っていきましょう！</span>
+      </p>
+      <Image src={workFun} alt="Work and fun illustration" class="mx-auto mt-8 max-w-md" />
+    </div>
+  </section>
 
   <section class="py-24 bg-white">
     <div class="container mx-auto px-4 text-center">
