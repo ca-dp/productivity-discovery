@@ -1,4 +1,5 @@
 import type * as React from "react";
+import { Icon } from '@iconify/react';
 
 import { Badge } from "@/components/ui/badge";
 import {
@@ -18,73 +19,59 @@ const links = navMenuConfig.links;
 const pages = []; //navMenuConfig.pagesNav[0];
 const examples = []; //navMenuConfig.examplesNav[0];
 
+const iconMap = {
+	FaCode: 'fa6-solid:code',
+	FaPaintBrush: 'fa6-solid:paintbrush',
+	FaBriefcase: 'fa6-solid:briefcase',
+};
+
 export function MainNavigationMenu() {
 	return (
 		<NavigationMenu>
 			<NavigationMenuList>
-				{/* <NavigationMenuItem>
-          <NavigationMenuTrigger>{pages.title}</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-3">
-                <a
-                  className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                  href="/"
-                >
-                  <Icons.logo className="size-8" />
-                  <div className="mb-2 mt-3 text-lg font-medium">Astronomy</div>
-                  <p className="text-sm leading-tight text-muted-foreground">
-                    Pages and examples apps built with Astro v4.5,
-                    shadcn/ui & react js.
-                    <br />
-                    Open Source.
-                  </p>
-                </a>
-              </li>
-
-              {pages.items?.map((page) => (
-                <ListItem key={page.title} {...page} />
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem> */}
-
-
-				{/* <NavigationMenuItem>
-					<NavigationMenuTrigger>{pages.title}</NavigationMenuTrigger>
-					<NavigationMenuContent>
-						<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-							{pages.items?.map((page) => (
-								<ListItem key={page.title} {...page} />
-							))}
-						</ul>
-					</NavigationMenuContent>
-				</NavigationMenuItem>
-
-				<NavigationMenuItem>
-					<NavigationMenuTrigger>{examples.title}</NavigationMenuTrigger>
-					<NavigationMenuContent>
-						<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-							{examples.items?.map((example) => (
-								<ListItem key={example.title} {...example} />
-							))}
-						</ul>
-					</NavigationMenuContent>
-				</NavigationMenuItem>  */}
-
 				{links ? (
-					<NavigationMenuItem>
-						{links.map((link) => (
-							<a
-								key={link.href}
-								href={link.href}
-								className={navigationMenuTriggerStyle()}
-								{...(link.forceReload ? { "data-astro-reload": true } : {})}
-							>
-								{link.title}
-							</a>
-						))}
-					</NavigationMenuItem>
+					links.map((link) => {
+						const iconName = iconMap[link.icon as keyof typeof iconMap];
+						return (
+							<NavigationMenuItem key={link.title}>
+								{link.href ? (
+									<a
+										href={link.href}
+										className={cn(
+											navigationMenuTriggerStyle(),
+											"flex items-center space-x-2",
+											link.color
+										)}
+										{...(link.forceReload ? { "data-astro-reload": true } : {})}
+									>
+										<Icon icon={iconName} className="w-4 h-4" />
+										<span>{link.title}</span>
+										{link.comingSoon && (
+											<Badge variant="outline" className="ml-2 text-[0.6rem] px-1 py-0 leading-tight">
+												Coming<br />Soon
+											</Badge>
+										)}
+									</a>
+								) : (
+									<span
+										className={cn(
+											navigationMenuTriggerStyle(),
+											"flex items-center space-x-2 cursor-not-allowed opacity-50",
+											link.color
+										)}
+									>
+										<Icon icon={iconName} className="w-4 h-4" />
+										<span>{link.title}</span>
+										{link.comingSoon && (
+											<Badge variant="outline" className="ml-2 text-[0.6rem] px-1 py-0 leading-tight">
+												Coming<br />Soon
+											</Badge>
+										)}
+									</span>
+								)}
+							</NavigationMenuItem>
+						);
+					})
 				) : null}
 			</NavigationMenuList>
 		</NavigationMenu>

@@ -1,0 +1,19 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const { category } = Astro.props;
+---
+
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+  <div class={`p-6 ${category.gradient} text-white`}>
+    <Icon name={category.icon} class="w-12 h-12 mb-4" />
+    <h3 class="text-2xl font-bold mb-2">{category.name}</h3>
+    <p class="text-lg mb-4">おすすめツール: {category.featuredTool}</p>
+    <img src={category.screenshot} alt={`${category.featuredTool} screenshot`} class="w-full h-48 object-cover rounded-lg" />
+  </div>
+  <div class="p-6">
+    <a href={`/category/${category.slug}`} class="text-blue-600 hover:underline">
+      詳細を見る →
+    </a>
+  </div>
+</div>

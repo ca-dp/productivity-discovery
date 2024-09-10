@@ -1,15 +1,16 @@
 ---
+import { Icon } from 'astro-icon/components';
 import MainLayout from "@/layouts/main-layout.astro";
 import HeroProductivity from "@/components/sections/hero-productivity.astro";
 import CategoryPreview from "@/components/sections/category-preview.astro";
 import FeaturedTool from "@/components/sections/featured-tool.astro";
 
 const categories = [
-  { name: "IDE", slug: "ide", featuredTool: "Cursor", icon: "mdi:code", gradient: "from-blue-500 to-cyan-500" },
-  { name: "タスク管理", slug: "task-management", featuredTool: "Linear", icon: "carbon:task", gradient: "from-green-500 to-teal-500" },
-  { name: "バージョン管理", slug: "version-control", featuredTool: "GitHub", icon: "mdi:git", gradient: "from-purple-500 to-pink-500" },
-  { name: "CI/CD", slug: "ci-cd", featuredTool: "GitHub Actions", icon: "mdi:pipe", gradient: "from-yellow-500 to-orange-500" },
-  { name: "コード品質", slug: "code-quality", featuredTool: "SonarQube", icon: "carbon:data-check", gradient: "from-red-500 to-pink-500" },
+  { name: "IDE", slug: "ide", featuredTool: "Cursor", icon: "mdi:code", gradient: "from-blue-500 to-cyan-500", screenshot: "https://cursor.sh/img/cursor-hero.png" },
+  { name: "タスク管理", slug: "task-management", featuredTool: "Linear", icon: "carbon:task", gradient: "from-green-500 to-teal-500", screenshot: "https://linear.app/static/home/hero-ui.webp" },
+  { name: "バージョン管理", slug: "version-control", featuredTool: "GitHub", icon: "mdi:git", gradient: "from-purple-500 to-pink-500", screenshot: "https://github.githubassets.com/images/modules/site/home-campaign/illu-repos.png" },
+  { name: "CI/CD", slug: "ci-cd", featuredTool: "GitHub Actions", icon: "mdi:pipe", gradient: "from-yellow-500 to-orange-500", screenshot: "https://github.githubassets.com/images/modules/site/actions/actions-workflow.png" },
+  { name: "コード品質", slug: "code-quality", featuredTool: "SonarQube", icon: "carbon:data-check", gradient: "from-red-500 to-pink-500", screenshot: "https://www.sonarqube.org/features/clean-as-you-code/sonarqube-hero.png" },
 ];
 ---
 
@@ -28,4 +29,24 @@ const categories = [
   </section>
 
   <FeaturedTool />
+
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold mb-6 text-gray-800">新しいツールを提案</h2>
+      <p class="text-xl mb-8 text-gray-600">
+        経費精算なしで使いたいツール、サービス、SaaS、ソリューションはありませんか?<br>
+        
+      </p>
+      <a
+        href="/suggest-tool"
+        class="inline-flex items-center bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition duration-300"
+      >
+        <Icon name="mdi:lightbulb-on" class="w-6 h-6 mr-2" />
+        ぜひご提案ください！
+      </a>
+      <p class="mt-4 text-sm text-gray-500">
+        皆様からの提案が、我々の組織全体の生産性向上につながります。
+      </p>
+    </div>
+  </section>
 </MainLayout>
