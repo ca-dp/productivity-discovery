@@ -1,0 +1,37 @@
+---
+import CategoryPreview from "./category-preview.astro";
+import SearchBox from "@/components/SearchBox";
+
+interface ToolCategoriesProps {
+  categories: Array<{
+    name: string;
+    slug: string;
+    featuredTool: string;
+    icon: string;
+    gradient: string;
+    screenshot?: string;
+    movie?: string;
+    isMain?: boolean;
+    internal: boolean;
+  }>;
+}
+
+const { categories } = Astro.props as ToolCategoriesProps;
+---
+
+<section class="py-24 bg-gray-100 dark:bg-gray-800">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center mb-16">
+      <h2 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600">カテゴリー別おすすめツール</h2>
+      <SearchBox client:load categories={categories} />
+    </div>
+
+    <div id="categories-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {categories.map((category) => (
+        <div class={`category-item ${category.isMain ? "col-span-2" : "col-span-1"}`}>
+          <CategoryPreview category={category} isMain={category.isMain} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

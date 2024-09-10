@@ -1,0 +1,37 @@
+---
+import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+import toolsSupportLight from "@/assets/tools-support.light.svg";
+import toolsSupportDark from "@/assets/tools-support.dark.svg";
+---
+
+<section class="py-32 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-5xl font-extrabold mb-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-teal-500 to-green-500 animate-text-shimmer">新しいツールで、FRESHな挑戦を</h2>
+    <p class="text-2xl mb-8 text-gray-800 dark:text-gray-200 font-semibold leading-relaxed max-w-3xl mx-auto">
+      経費精算なしで使いたいツール、サービス、SaaS、ソリューションはありませんか？
+    </p>
+    <p class="text-xl mb-16 text-gray-700 dark:text-gray-300 leading-loose max-w-2xl mx-auto">
+      <span class="font-bold text-indigo-700 dark:text-indigo-400">最高のツール</span>で、<span class="text-red-600 dark:text-red-400 font-bold">最高のパフォーマンス</span>を。<br>
+      <span class="italic">経費精算、セキュリティ、法務、契約</span> - どんな壁も突破し、<br>
+      <span class="underline decoration-wavy decoration-pink-500 dark:decoration-pink-400">あなたの挑戦を全力でサポートします。</span>
+    </p>
+    </p>
+    <div class="mx-auto mt-8 mb-12 max-w-xl">
+      <Image src={toolsSupportLight} alt="サポート" class="block dark:hidden" />
+      <Image src={toolsSupportDark} alt="サポート" class="hidden dark:block" />
+    </div>
+
+    <a
+      href="/suggest-tool"
+      class="inline-flex items-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold text-lg py-5 px-10 rounded-full hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 transition duration-300 transform hover:scale-105 hover:shadow-xl"
+    >
+      <Icon name="mdi:lightbulb-on" class="w-8 h-8 mr-3 animate-pulse" />
+      新しいツールを提案する
+    </a>
+    <p class="mt-12 text-sm text-gray-600 dark:text-gray-400 italic max-w-xl mx-auto">
+      皆様からのFRESHな提案が、我々の生産性向上と<br>
+      グローバルな成長につながります。
+    </p>
+  </div>
+</section>

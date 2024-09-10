@@ -1,0 +1,19 @@
+---
+import { Image } from 'astro:assets';
+import workFunLight from "@/assets/work-fun.light.svg";
+import workFunDark from "@/assets/work-fun.dark.svg";
+---
+
+<section class="py-12 bg-gray-100 dark:bg-gray-800">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-200">オールウェイズFRESH!な生産性ポータル</h2>
+    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto p-6 rounded-xl shadow-lg bg-white dark:bg-gray-700">
+      <span class="font-bold">このポータルは、挑戦する仲間を応援します！</span><br>
+      <span class="italic">最高のツールで、クリエイティブな勝負を。</span> <span class="font-semibold text-indigo-600 dark:text-indigo-400">AIも味方につけて、世界に通用するサービスを。</span> <span class="underline decoration-wavy decoration-green-500 dark:decoration-green-400">一緒に、インターネット産業の未来を創造しましょう！</span>
+    </p>
+    <div class="mx-auto mt-8 max-w-md">
+      <Image src={workFunLight} alt="Work and fun illustration" class="block dark:hidden" />
+      <Image src={workFunDark} alt="Work and fun illustration" class="hidden dark:block" />
+    </div>
+  </div>
+</section>
