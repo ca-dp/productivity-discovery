@@ -1,57 +1,12 @@
 ---
-import { Icon } from 'astro-icon/components';
-
-const news = [
-  {
-    icon: "mdi:star",
-    title: "Linearがおすすめツールに認定",
-    date: new Date("2024-03-15"),
-  },
-  {
-    icon: "mdi:robot",
-    title: "Claude 3.5が多くのユースケースでChatGPTを上回る性能を示す",
-    date: new Date("2024-03-10"),
-  },
-  {
-    icon: "mdi:security",
-    title: "推奨ツールのセキュリティ審査基準が厳格化",
-    date: new Date("2024-03-05"),
-  },
-  {
-    icon: "mdi:tools",
-    title: "新しい開発者向けツール「DevBoost」が試験運用開始",
-    date: new Date("2024-03-01"),
-  },
-  {
-    icon: "mdi:chart-line",
-    title: "AIツール導入により生産性が平均30%向上したことが社内調査で判明",
-    date: new Date("2024-02-28"),
-  }
-];
-
-const formatDate = (date: Date) => {
-  return new Intl.DateTimeFormat('ja-JP', { 
-    year: 'numeric', 
-    month: 'short', 
-    day: 'numeric' 
-  }).format(date);
-};
+import LastMinuteNews from '../LastMinuteNews';
 ---
 
-<section class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900 py-4">
-  <div class="container mx-auto px-4 max-w-3xl">
-    <h2 class="text-lg font-bold mb-3 text-gray-800 dark:text-white flex items-center">
-      <Icon name="mdi:newspaper-variant-outline" class="w-5 h-5 mr-2 text-blue-600 dark:text-blue-400" />
-      最新ニュース
-    </h2>
-    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-3">
-      {news.map((item) => (
-        <div class="flex items-center py-2 border-b border-gray-200 dark:border-gray-600 last:border-b-0">
-          <Icon name={item.icon} class="w-4 h-4 mr-2 text-blue-600 dark:text-blue-400 flex-shrink-0" />
-          <p class="text-sm text-gray-800 dark:text-white flex-grow">{item.title}</p>
-          <span class="text-xs text-gray-500 dark:text-gray-400 ml-2">{formatDate(item.date)}</span>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
+<LastMinuteNews client:load />
+
+<style>
+  .text-2xs {
+    font-size: 0.65rem;
+    line-height: 1rem;
+  }
+</style>
