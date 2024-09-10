@@ -4,36 +4,52 @@ import { Icon } from 'astro-icon/components';
 const news = [
   {
     icon: "mdi:star",
-    title: "Linearがおすすめツールに",
-    description: "プロジェクト管理ツールLinearが、その優れた機能と使いやすさから公式におすすめツールとして認定されました。",
+    title: "Linearがおすすめツールに認定",
+    date: new Date("2024-03-15"),
   },
   {
     icon: "mdi:robot",
-    title: "Claude 3.5がChatGPTを凌駕",
-    description: "最新のClaude 3.5が多くのユースケースでChatGPTを上回る性能を示し、AIアシスタントの新たな標準となりつつあります。",
+    title: "Claude 3.5が多くのユースケースでChatGPTを上回る性能を示す",
+    date: new Date("2024-03-10"),
   },
   {
     icon: "mdi:security",
-    title: "セキュリティ強化の取り組み",
-    description: "全社的なセキュリティ強化の一環として、推奨ツールのセキュリティ審査基準が厳格化されました。",
+    title: "推奨ツールのセキュリティ審査基準が厳格化",
+    date: new Date("2024-03-05"),
+  },
+  {
+    icon: "mdi:tools",
+    title: "新しい開発者向けツール「DevBoost」が試験運用開始",
+    date: new Date("2024-03-01"),
+  },
+  {
+    icon: "mdi:chart-line",
+    title: "AIツール導入により生産性が平均30%向上したことが社内調査で判明",
+    date: new Date("2024-02-28"),
   }
 ];
+
+const formatDate = (date: Date) => {
+  return new Intl.DateTimeFormat('ja-JP', { 
+    year: 'numeric', 
+    month: 'short', 
+    day: 'numeric' 
+  }).format(date);
+};
 ---
 
-<section class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900 py-12">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-white">
-      <Icon name="mdi:newspaper-variant-outline" class="inline-block w-8 h-8 mr-2 text-blue-600 dark:text-blue-400" />
+<section class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900 py-4">
+  <div class="container mx-auto px-4 max-w-3xl">
+    <h2 class="text-lg font-bold mb-3 text-gray-800 dark:text-white flex items-center">
+      <Icon name="mdi:newspaper-variant-outline" class="w-5 h-5 mr-2 text-blue-600 dark:text-blue-400" />
       最新ニュース
     </h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-3">
       {news.map((item) => (
-        <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300">
-          <div class="flex items-center mb-4">
-            <Icon name={item.icon} class="w-6 h-6 mr-2 text-blue-600 dark:text-blue-400" />
-            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">{item.title}</h3>
-          </div>
-          <p class="text-gray-600 dark:text-gray-300">{item.description}</p>
+        <div class="flex items-center py-2 border-b border-gray-200 dark:border-gray-600 last:border-b-0">
+          <Icon name={item.icon} class="w-4 h-4 mr-2 text-blue-600 dark:text-blue-400 flex-shrink-0" />
+          <p class="text-sm text-gray-800 dark:text-white flex-grow">{item.title}</p>
+          <span class="text-xs text-gray-500 dark:text-gray-400 ml-2">{formatDate(item.date)}</span>
         </div>
       ))}
     </div>
