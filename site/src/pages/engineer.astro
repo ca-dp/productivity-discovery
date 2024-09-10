@@ -6,11 +6,21 @@ import CategoryPreview from "@/components/sections/category-preview.astro";
 import FeaturedTool from "@/components/sections/featured-tool.astro";
 
 const categories = [
-  { name: "IDE", slug: "ide", featuredTool: "Cursor", icon: "mdi:code", gradient: "from-blue-500 to-cyan-500", screenshot: "https://cursor.sh/img/cursor-hero.png" },
-  { name: "タスク管理", slug: "task-management", featuredTool: "Linear", icon: "carbon:task", gradient: "from-green-500 to-teal-500", screenshot: "https://linear.app/static/home/hero-ui.webp" },
+  { name: "IDE", slug: "ide", featuredTool: "Cursor", icon: "mdi:code", gradient: "from-blue-500 to-cyan-500", screenshot: "https://cursor.sh/img/cursor-hero.png", isMain: true },
+  { name: "タスク管理", slug: "task-management", featuredTool: "Linear", icon: "carbon:task", gradient: "from-green-500 to-teal-500", screenshot: "https://linear.app/static/home/hero-ui.webp", isMain: true },
+  { name: "CD", slug: "continuous-deployment", featuredTool: "PipeCD", icon: "mdi:rocket-launch", gradient: "from-indigo-500 to-blue-500", screenshot: "https://pipecd.dev/images/architecture-overview.png", isMain: false },
   { name: "バージョン管理", slug: "version-control", featuredTool: "GitHub", icon: "mdi:git", gradient: "from-purple-500 to-pink-500", screenshot: "https://github.githubassets.com/images/modules/site/home-campaign/illu-repos.png" },
-  { name: "CI/CD", slug: "ci-cd", featuredTool: "GitHub Actions", icon: "mdi:pipe", gradient: "from-yellow-500 to-orange-500", screenshot: "https://github.githubassets.com/images/modules/site/actions/actions-workflow.png" },
+  { name: "CI", slug: "continuous-integration", featuredTool: "GitHub Actions", icon: "mdi:pipe", gradient: "from-yellow-500 to-orange-500", screenshot: "https://github.githubassets.com/images/modules/site/actions/actions-workflow.png" },
   { name: "コード品質", slug: "code-quality", featuredTool: "SonarQube", icon: "carbon:data-check", gradient: "from-red-500 to-pink-500", screenshot: "https://www.sonarqube.org/features/clean-as-you-code/sonarqube-hero.png" },
+  { name: "認証", slug: "authentication", featuredTool: "Clerk", icon: "mdi:account-lock", gradient: "from-teal-500 to-green-500", screenshot: "https://clerk.com/_next/image?url=%2Fimages%2Fhome%2Fhero.png&w=3840&q=75" },
+  { name: "API開発", slug: "api-development", featuredTool: "Postman", icon: "mdi:api", gradient: "from-orange-500 to-red-500", screenshot: "https://assets.getpostman.com/common-share/postman-platform-overview.jpg" },
+  { name: "コラボレーション", slug: "collaboration", featuredTool: "Slack", icon: "mdi:message-text", gradient: "from-purple-500 to-indigo-500", screenshot: "https://a.slack-edge.com/96dd309/marketing/img/homepage/self-serve-campaign/features/slack-connect-hero.jp-JP.png" },
+  { name: "プロジェクト管理", slug: "project-management", featuredTool: "Jira", icon: "mdi:chart-gantt", gradient: "from-blue-500 to-indigo-500", screenshot: "https://wac-cdn.atlassian.com/dam/jcr:6203a73b-f2a1-4d91-9587-bc4b7d822d6b/Jira%20Software-blue.svg?cdnVersion=1151" },
+  { name: "コンテナ化", slug: "containerization", featuredTool: "OrbStack", icon: "mdi:docker", gradient: "from-cyan-500 to-blue-500", screenshot: "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" },
+  { name: "クラウドインフラ", slug: "cloud-infrastructure", featuredTool: "AWS", icon: "mdi:cloud", gradient: "from-yellow-500 to-orange-500", screenshot: "https://d1.awsstatic.com/Digital%20Marketing/House/Hero/products/EC2_General_Purpose_2up.69e882b588f8e961ab399c7ed4c35e4a4d09fd2d.png" },
+  { name: "モニタリング", slug: "monitoring", featuredTool: "Datadog", icon: "mdi:chart-line", gradient: "from-purple-500 to-pink-500", screenshot: "https://imgix.datadoghq.com/img/about/presskit/logo-v/dd_vertical_purple.png" },
+  { name: "セキュリティ", slug: "security", featuredTool: "Snyk", icon: "mdi:shield-check", gradient: "from-red-500 to-orange-500", screenshot: "https://snyk.io/_next/image/?url=https%3A%2F%2Fres.cloudinary.com%2Fsnyk%2Fimage%2Fupload%2Fv1677069450%2Fwebsite-assets%2Fhomepage-hero.png&w=1920&q=75" },
+  { name: "ドキュメント管理", slug: "documentation", featuredTool: "Notion", icon: "mdi:file-document", gradient: "from-gray-500 to-blue-500", screenshot: "https://www.notion.so/cdn-cgi/image/format=auto,width=1920,quality=100/front-static/pages/product/home-page-hero-refreshed-v3.png" },
 ];
 ---
 
@@ -20,9 +30,9 @@ const categories = [
   <section class="py-20 bg-gray-100">
     <div class="container mx-auto px-4">
       <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">カテゴリー別おすすめツール</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {categories.map(category => (
-          <CategoryPreview category={category} />
+          <CategoryPreview category={category} isMain={category.isMain} />
         ))}
       </div>
     </div>
