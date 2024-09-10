@@ -99,17 +99,17 @@ export const navMenuConfig: NavMenuConfig = {
 	],*/
 	links: [
 		{
-			title: "エンジニア",
+			title: "開発",
 			href: "/engineer",
-			description: "エンジニア向けのリソースとツール",
+			description: "開発に関するリソースとツール",
 			image: "/images/examples/engineer.jpg",
 			icon: "FaCode",
 			color: "text-blue-500",
 		},
 		{
-			title: "デザイナー",
+			title: "クリエイティブ",
 			href: undefined,
-			description: "デザイナー向けの情報とインスピレーション",
+			description: "デザインに関する情報とインスピレーション",
 			image: "/images/examples/designer.jpg",
 			icon: "FaPaintBrush",
 			color: "text-purple-500",
@@ -118,7 +118,7 @@ export const navMenuConfig: NavMenuConfig = {
 		{
 			title: "ビジネス",
 			href: undefined,
-			description: "ビジネス戦略と経営に関する洞察",
+			description: "プロジェクト管理と戦略に関する洞察",
 			image: "/images/examples/business.jpg",
 			icon: "FaBriefcase",
 			color: "text-green-500",
