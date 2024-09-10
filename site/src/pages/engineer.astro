@@ -7,6 +7,8 @@ import FeaturedTool from "@/components/sections/featured-tool.astro";
 import SearchBox from "@/components/SearchBox";
 import { Image } from 'astro:assets';
 import workFun from "@/assets/work-fun.svg";
+import toolsSupportLight from "@/assets/tools-support.light.svg";
+import toolsSupportDark from "@/assets/tools-support.dark.svg";
 
 const categories = [
   { name: "IDE", slug: "ide", featuredTool: "Cursor", icon: "mdi:code", gradient: "from-blue-500 to-cyan-500", movie: "https://www.cursor.com/videos/cmdkloop2.mp4", isMain: true, internal: false },
@@ -34,9 +36,7 @@ const categories = [
 <MainLayout title="生産性ポータル">
   <HeroProductivity />
   
-  
-
-  <section class="py-24 bg-gray-100">
+  <section class="py-24 bg-gray-100 dark:bg-gray-800">
     <div class="container mx-auto px-4">
       <div class="flex justify-between items-center mb-16">
         <h2 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600">カテゴリー別おすすめツール</h2>
@@ -55,37 +55,43 @@ const categories = [
 
   <FeaturedTool />
 
-  <section class="py-12 bg-gray-100">
+  <section class="py-12 bg-gray-100 dark:bg-gray-800">
     <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-6 text-gray-800">みんなで作る生産性ポータル</h2>
-      <p class="text-lg text-gray-600 max-w-3xl mx-auto p-6 rounded-xl shadow-lg bg-white">
-        <span class="font-bold">このポータルは、みんなの「やりたい」を応援します！</span><br>
-        <span class="italic">最高のツールを見つけて、楽しく効率的に仕事しよう。</span> <span class="font-semibold text-indigo-600">AIも味方につけて、もっとクリエイティブに。</span> <span class="underline decoration-wavy decoration-green-500">一緒に、サイバーエージェントらしい新しい働き方を作っていきましょう！</span>
+      <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-200">オールウェイズFRESH!な生産性ポータル</h2>
+      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto p-6 rounded-xl shadow-lg bg-white dark:bg-gray-700">
+        <span class="font-bold">このポータルは、挑戦する仲間を応援します！</span><br>
+        <span class="italic">最高のツールで、クリエイティブな勝負を。</span> <span class="font-semibold text-indigo-600 dark:text-indigo-400">AIも味方につけて、世界に通用するサービスを。</span> <span class="underline decoration-wavy decoration-green-500 dark:decoration-green-400">一緒に、インターネット産業の未来を創造しましょう！</span>
       </p>
       <Image src={workFun} alt="Work and fun illustration" class="mx-auto mt-8 max-w-md" />
     </div>
   </section>
-  <section class="py-32 bg-gradient-to-b from-white to-gray-50">
+
+  <section class="py-32 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
     <div class="container mx-auto px-4 text-center">
-      <h2 class="text-5xl font-extrabold mb-10 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 animate-text-shimmer">新しいツールを提案しよう</h2>
-      <p class="text-2xl mb-8 text-gray-800 font-semibold leading-relaxed max-w-3xl mx-auto">
-        経費精算なしで使いたい<span class="text-blue-600">ツール</span>、<span class="text-green-600">サービス</span>、<span class="text-yellow-600">SaaS</span>、<span class="text-red-600">ソリューション</span>はありませんか？
+      <h2 class="text-5xl font-extrabold mb-10 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 animate-text-shimmer">新しいツールで、FRESHな挑戦を</h2>
+      <p class="text-2xl mb-8 text-gray-800 dark:text-gray-200 font-semibold leading-relaxed max-w-3xl mx-auto">
+        経費精算なしで使いたい<span class="text-blue-600 dark:text-blue-400">ツール</span>、<span class="text-green-600 dark:text-green-400">サービス</span>、<span class="text-yellow-600 dark:text-yellow-400">SaaS</span>、<span class="text-red-600 dark:text-red-400">ソリューション</span>はありませんか？
       </p>
-      <p class="text-xl mb-16 text-gray-700 leading-loose max-w-2xl mx-auto">
-        <span class="font-bold text-indigo-700">最高のツール</span>で、<span class="font-bold text-teal-700">最高のパフォーマンス</span>を。<br>
+      <p class="text-xl mb-16 text-gray-700 dark:text-gray-300 leading-loose max-w-2xl mx-auto">
+        <span class="font-bold text-indigo-700 dark:text-indigo-400">最高のツール</span>で、<span class="font-bold text-teal-700 dark:text-teal-400">最高のパフォーマンス</span>を。<br>
         <span class="italic">経費精算、セキュリティ、法務、契約</span> - どんな壁も突破し、<br>
-        <span class="underline decoration-wavy decoration-pink-500">あなたの挑戦を全力でサポートします。</span>
+        <span class="underline decoration-wavy decoration-pink-500 dark:decoration-pink-400">あなたの挑戦を全力でサポートします。</span>
       </p>
+      <div class="mx-auto mt-8 mb-12 max-w-xl">
+        <Image src={toolsSupportLight} alt="サポート" class="block dark:hidden" />
+        <Image src={toolsSupportDark} alt="サポート" class="hidden dark:block" />
+      </div>
+
       <a
         href="/suggest-tool"
         class="inline-flex items-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold text-lg py-5 px-10 rounded-full hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 transition duration-300 transform hover:scale-105 hover:shadow-xl"
       >
         <Icon name="mdi:lightbulb-on" class="w-8 h-8 mr-3 animate-pulse" />
-        ぜひご提案ください！
+        新しいツールを提案する
       </a>
-      <p class="mt-12 text-sm text-gray-600 italic max-w-xl mx-auto">
-        皆様からの<span class="font-semibold text-indigo-600">革新的な提案</span>が、我々のグループ・組織全体の<br>
-        <span class="font-semibold text-green-600">生産性向上</span>と<span class="font-semibold text-orange-600">イノベーション</span>につながります。
+      <p class="mt-12 text-sm text-gray-600 dark:text-gray-400 italic max-w-xl mx-auto">
+        皆様からのFRESHな提案が、我々の生産性向上と<br>
+        グローバルな成長につながります。
       </p>
     </div>
   </section>
