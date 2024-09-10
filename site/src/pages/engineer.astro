@@ -4,9 +4,10 @@ import MainLayout from "@/layouts/main-layout.astro";
 import HeroProductivity from "@/components/sections/hero-productivity.astro";
 import CategoryPreview from "@/components/sections/category-preview.astro";
 import FeaturedTool from "@/components/sections/featured-tool.astro";
+import SearchBox from "@/components/SearchBox";
 
 const categories = [
-  { name: "IDE", slug: "ide", featuredTool: "Cursor", icon: "mdi:code", gradient: "from-blue-500 to-cyan-500", screenshot: "https://cursor.sh/img/cursor-hero.png", isMain: true, internal: false },
+  { name: "IDE", slug: "ide", featuredTool: "Cursor", icon: "mdi:code", gradient: "from-blue-500 to-cyan-500", movie: "https://www.cursor.com/videos/cmdkloop2.mp4", isMain: true, internal: false },
   { name: "プロジェクト管理", slug: "project-management", featuredTool: "Linear", icon: "mdi:chart-gantt", gradient: "from-green-500 to-teal-500", screenshot: "https://linear.app/static/home/hero-ui.webp", isMain: true, internal: false },
   { name: "CD", slug: "continuous-deployment", featuredTool: "PipeCD", icon: "mdi:rocket-launch", gradient: "from-indigo-500 to-blue-500", screenshot: "https://pipecd.dev/images/architecture-overview.png", internal: true },
   { name: "バージョン管理", slug: "version-control", featuredTool: "GitHub", icon: "mdi:git", gradient: "from-purple-500 to-pink-500", screenshot: "https://github.githubassets.com/images/modules/site/home-campaign/illu-repos.png", internal: false },
@@ -20,6 +21,11 @@ const categories = [
   { name: "モニタリング", slug: "monitoring", featuredTool: "Datadog", icon: "mdi:chart-line", gradient: "from-purple-500 to-pink-500", screenshot: "https://imgix.datadoghq.com/img/about/presskit/logo-v/dd_vertical_purple.png", internal: false },
   { name: "セキュリティ", slug: "security", featuredTool: "Snyk", icon: "mdi:shield-check", gradient: "from-red-500 to-orange-500", screenshot: "https://snyk.io/_next/image/?url=https%3A%2F%2Fres.cloudinary.com%2Fsnyk%2Fimage%2Fupload%2Fv1677069450%2Fwebsite-assets%2Fhomepage-hero.png&w=1920&q=75", internal: false },
   { name: "ドキュメント管理", slug: "documentation", featuredTool: "Notion", icon: "mdi:file-document", gradient: "from-gray-500 to-blue-500", screenshot: "https://www.notion.so/cdn-cgi/image/format=auto,width=1920,quality=100/front-static/pages/product/home-page-hero-refreshed-v3.png", internal: false },
+  // New categories
+  { name: "フィーチャーフラグ", slug: "feature-flags", featuredTool: "Bucketeer", icon: "mdi:flag-variant", gradient: "from-green-400 to-blue-500", screenshot: "https://bucketeer.io/images/bucketeer-hero.png", internal: true },
+  { name: "CDN", slug: "cdn", featuredTool: "Cloudflare", icon: "mdi:cloud-outline", gradient: "from-orange-400 to-amber-500", screenshot: "https://www.cloudflare.com/img/cf-twitter-card.png", internal: false },
+  { name: "パスワード管理", slug: "password-manager", featuredTool: "Bitwarden", icon: "mdi:shield-key", gradient: "from-blue-400 to-indigo-500", screenshot: "https://bitwarden.com/_gatsby/image/3e8c4e7f7b5e4d6f0d5a7c8d5a7c8d5a.png", internal: false },
+  { name: "決済サービス", slug: "payment-service", featuredTool: "Simply", icon: "mdi:credit-card", gradient: "from-emerald-400 to-teal-500", screenshot: "https://example.com/simply-screenshot.png", internal: true },
 ];
 ---
 
@@ -28,10 +34,14 @@ const categories = [
   
   <section class="py-24 bg-gray-100">
     <div class="container mx-auto px-4">
-      <h2 class="text-5xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600">カテゴリー別おすすめツール</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {categories.map((category, index) => (
-          <div class={category.isMain ? "col-span-2" : "col-span-1"}>
+      <div class="flex justify-between items-center mb-16">
+        <h2 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600">カテゴリー別おすすめツール</h2>
+        <SearchBox client:load categories={categories} />
+      </div>
+
+      <div id="categories-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {categories.map((category) => (
+          <div class={`category-item ${category.isMain ? "col-span-2" : "col-span-1"}`}>
             <CategoryPreview category={category} isMain={category.isMain} />
           </div>
         ))}
