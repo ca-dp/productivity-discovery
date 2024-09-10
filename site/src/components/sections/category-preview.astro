@@ -7,27 +7,32 @@ interface CategoryProps {
   featuredTool: string;
   icon: string;
   gradient: string;
+  screenshot: string;
+  isMain?: boolean;
 }
 
 interface Props {
   category: CategoryProps;
+  isMain?: boolean;
 }
 
 const { category, isMain = false } = Astro.props;
 ---
 
 <div class={`category-preview ${isMain ? 'main-category' : ''}`}>
-  <div class={`rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:shadow-xl ${isMain ? 'bg-blue-50' : 'bg-white hover:scale-105'}`}>
-    <div class={`h-2 bg-gradient-to-r ${category.gradient}`}></div>
-    <div class="p-6">
-      <div class="flex items-center mb-4">
-        <Icon name={category.icon} class={`w-8 h-8 mr-3 ${isMain ? 'text-blue-600' : 'text-gray-700'}`} />
-        <h3 class={`font-semibold ${isMain ? 'text-blue-600 text-2xl' : 'text-gray-800 text-xl'}`}>{category.name}</h3>
+  <div class={`relative rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:shadow-xl ${isMain ? 'hover:scale-105' : 'hover:scale-102'}`}>
+    <div class={`h-16 bg-gradient-to-r ${category.gradient}`}>
+      <div class="flex items-center h-full px-4">
+        <Icon name={category.icon} class="w-8 h-8 mr-3 text-white" />
+        <h3 class={`font-bold text-white ${isMain ? 'text-xl' : 'text-lg'}`}>{category.name}</h3>
       </div>
-      <p class={`${isMain ? 'text-gray-800 font-medium' : 'text-gray-600'} mb-4`}>おすすめツール: {category.featuredTool}</p>
-      <a href={`/category/${category.slug}`} class={`inline-flex items-center ${isMain ? 'text-blue-600 hover:text-blue-800' : 'text-blue-500 hover:text-blue-700'} font-semibold transition duration-300`}>
+    </div>
+    <div class="bg-white p-4">
+      <img src={category.screenshot} alt={category.featuredTool} class={`w-full object-cover rounded-md mb-4 ${isMain ? 'h-64' : 'h-48'}`} />
+      <p class="text-gray-700 font-medium mb-4">おすすめツール: {category.featuredTool}</p>
+      <a href={`/category/${category.slug}`} class="inline-flex items-center text-blue-600 font-semibold transition duration-300 hover:text-blue-800">
         詳細を見る
-        <Icon name="heroicons:arrow-right" class="w-5 h-5 ml-2" />
+        <Icon name="heroicons:arrow-right" class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" />
       </a>
     </div>
   </div>
