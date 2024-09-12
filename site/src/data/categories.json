@@ -11,7 +11,8 @@
     "gradient": "from-blue-500 to-cyan-500",
     "movie": "https://www.cursor.com/videos/cmdkloop2.mp4",
     "isMain": true,
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/cursor/337"
   },
   {
     "name": "プロジェクト管理",
@@ -25,7 +26,8 @@
     "gradient": "from-green-500 to-teal-500",
     "screenshot": "https://cdn.sanity.io/images/ornj730p/production/2bc8798f03191d4cbeb4d54854aae99e2e1bdd71-1920x1278.png?q=95&auto=format&dpr=2",
     "isMain": true,
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/linear/336"
   },
   {
     "name": "CD",
@@ -38,7 +40,8 @@
     "icon": "mdi:rocket-launch",
     "gradient": "from-indigo-500 to-blue-500",
     "screenshot": "https://pipecd.dev/images/piped-list-page.png",
-    "internal": true
+    "internal": true,
+    "reviewsUrl": "https://findy-tools.io/products/pipecd/338"
   },
   {
     "name": "バージョン管理",
@@ -51,7 +54,8 @@
     "icon": "mdi:git",
     "gradient": "from-purple-500 to-pink-500",
     "screenshot": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWwUGbFJC7NIg_hSIFM_D2Pr4OROpb-3ak2EtN7VusPQEAxwypMxIHkk9L6D8mCaUOT3Y&usqp=CAU",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/github/339"
   },
   {
     "name": "CI",
@@ -64,7 +68,8 @@
     "icon": "mdi:pipe",
     "gradient": "from-yellow-500 to-orange-500",
     "screenshot": "https://media.licdn.com/dms/image/D5612AQGXJT_NZFWlSA/article-cover_image-shrink_720_1280/0/1713557070073?e=2147483647&v=beta&t=jJd8-1XChco1FtHwvhgB9n6Squetw5wSBboVFZKkl0o",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/github-actions/340"
   },
   {
     "name": "コード品質",
@@ -77,7 +82,8 @@
     "icon": "carbon:data-check",
     "gradient": "from-red-500 to-pink-500",
     "screenshot": "https://dx.appirio.com/quality-sonarqube/granting-permissions/SonarQube-ProjectDashboard-1.png",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/sonarqube/341"
   },
   {
     "name": "認証",
@@ -90,7 +96,8 @@
     "icon": "mdi:account-lock",
     "gradient": "from-teal-500 to-green-500",
     "screenshot": "https://clerk.com/_next/static/media/sign-in@2xrl.72e3ee2a.webp",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/clerk/342"
   },
   {
     "name": "API開発",
@@ -103,7 +110,8 @@
     "icon": "mdi:api",
     "gradient": "from-orange-500 to-red-500",
     "screenshot": "https://voyager.postman.com/illustration/api-client-postman-screenshot-illustration.png",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/postman/343"
   },
   {
     "name": "コラボレーション",
@@ -116,7 +124,8 @@
     "icon": "mdi:message-text",
     "gradient": "from-purple-500 to-indigo-500",
     "screenshot": "https://a.slack-edge.com/04bfe/marketing/img/media-kit/product-screenshots/img-product-screenshots.ko-KR.jpg",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/slack/344"
   },
   {
     "name": "コンテナ化",
@@ -129,7 +138,8 @@
     "icon": "mdi:docker",
     "gradient": "from-cyan-500 to-blue-500",
     "screenshot": "https://orbstack.dev/_next/image?url=%2Fimg%2Fhero.png&w=1920&q=75",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/orbstack/345"
   },
   {
     "name": "クラウドインフラ",
@@ -142,7 +152,8 @@
     "icon": "mdi:cloud",
     "gradient": "from-yellow-500 to-orange-500",
     "screenshot": "https://solace.com/wp-content/uploads/2019/04/GCP-diagram.png",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/gcp/346"
   },
   {
     "name": "モニタリング",
@@ -155,7 +166,8 @@
     "icon": "mdi:chart-line",
     "gradient": "from-purple-500 to-pink-500",
     "screenshot": "https://imgix.datadoghq.com/img/blog/real-user-monitoring-with-datadog/datadog-real-user-monitoring.png?fit=crop&w=1200&h=630",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/datadog/347"
   },
   {
     "name": "セキュリティ",
@@ -168,7 +180,8 @@
     "icon": "mdi:shield-check",
     "gradient": "from-red-500 to-orange-500",
     "screenshot": "https://res.cloudinary.com/snyk/image/upload/v1701280100/illustration-ui-apprisk-priority.svg",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/snyk/348"
   },
   {
     "name": "ドキュメント管理",
@@ -181,7 +194,8 @@
     "icon": "mdi:file-document",
     "gradient": "from-gray-500 to-blue-500",
     "screenshot": "https://www.notion.so/cdn-cgi/image/format=webp,width=3840/https://images.ctfassets.net/spoqsaf9291f/2ngxl8Xa5kOQyNTlf1j3DU/10f20c2e01395763f768a3410bc10582/Screenshot_2023-09-08_at_9.28.32_AM.png",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/notion/349"
   },
   {
     "name": "フィーチャーフラグ",
@@ -194,7 +208,8 @@
     "icon": "mdi:flag-variant",
     "gradient": "from-green-400 to-blue-500",
     "screenshot": "https://bucketeer.io/img/slider/img_title-top_bucketeer_list_slide-off_chat-off.png",
-    "internal": true
+    "internal": true,
+    "reviewsUrl": "https://findy-tools.io/products/bucketeer/350"
   },
   {
     "name": "CDN",
@@ -207,7 +222,8 @@
     "icon": "mdi:cloud-outline",
     "gradient": "from-orange-400 to-amber-500",
     "screenshot": "https://www.cloudflare.com/img/cf-twitter-card.png",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/cloudflare/351"
   },
   {
     "name": "パスワード管理",
@@ -220,7 +236,8 @@
     "icon": "mdi:shield-key",
     "gradient": "from-blue-400 to-indigo-500",
     "screenshot": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Bitwarden_Desktop_MacOS.png",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/bitwarden/352"
   },
   {
     "name": "決済サービス",
@@ -233,7 +250,8 @@
     "icon": "mdi:credit-card",
     "gradient": "from-emerald-400 to-teal-500",
     "screenshot": "https://it.cyberagent.group/static/a63d17155b844ab9877e8a61f3ad6434/c4959/logo.webp",
-    "internal": true
+    "internal": true,
+    "reviewsUrl": "https://findy-tools.io/products/simply/353"
   },
   {
     "name": "汎用LLM",
@@ -246,7 +264,8 @@
     "icon": "mdi:robot",
     "gradient": "from-purple-400 to-indigo-500",
     "screenshot": "https://www.zdnet.com/a/img/resize/d0db2436f05d3f169a90b09ee8450b0e678dbb67/2024/07/03/76138ba3-3281-432c-b483-8d49e11c06ac/figure-top-how-to-use-claude-ai-and-how-its-different-from-chatgpt.jpg?auto=webp&width=1280",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/claude/354"
   },
   {
     "name": "翻訳",
@@ -259,7 +278,8 @@
     "icon": "mdi:translate",
     "gradient": "from-blue-400 to-green-500",
     "screenshot": "https://i.ytimg.com/vi/TUksBlZxQAQ/maxresdefault.jpg",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/claude/354"
   },
   {
     "name": "検索",
@@ -272,7 +292,8 @@
     "icon": "mdi:magnify",
     "gradient": "from-yellow-400 to-orange-500",
     "screenshot": "https://techcrunch.com/wp-content/uploads/2024/06/Screenshot-2024-06-11-at-9.19.18%E2%80%AFPM.png?w=680",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/genspark/356"
   },
   {
     "name": "カスタマーサポート",
@@ -285,7 +306,8 @@
     "icon": "mdi:headset",
     "gradient": "from-green-400 to-blue-500",
     "screenshot": "https://pageflows.com/media/videos/screenie_a36a89b4-11d5-4c17-8ef3-e49ca36cd5e0.jpg",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/zendesk/357"
   },
   {
     "name": "ビジュアルAIエージェント",
@@ -298,7 +320,8 @@
     "icon": "mdi:eye-outline",
     "gradient": "from-pink-400 to-red-500",
     "screenshot": "https://framerusercontent.com/images/nuR2Y1onHFdk6QAdFxSBFLMLHr8.png?scale-down-to=1024",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/dify/358"
   },
   {
     "name": "状態管理の可視化",
@@ -311,7 +334,8 @@
     "icon": "mdi:state-machine",
     "gradient": "from-indigo-400 to-purple-500",
     "screenshot": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmLizs86BzdE5ACoundfjOY6i-PQVasvCOOw&s",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/stately/359"
   },
   {
     "name": "メール配信サービス",
@@ -324,7 +348,8 @@
     "icon": "mdi:email-fast-outline",
     "gradient": "from-blue-400 to-indigo-600",
     "screenshot": "https://resend.com/static/cover.png",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/resend/360"
   },
   {
     "name": "同期エンジン",
@@ -337,7 +362,8 @@
     "icon": "mdi:sync",
     "gradient": "from-green-400 to-blue-500",
     "screenshot": "https://cdn.prod.website-files.com/65faec1b01547096cbfafe87/66d6e785710503db436b9862_powersync-img-meta-share.png",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/powersync/361"
   },
   {
     "name": "電話/SMS",
@@ -350,7 +376,8 @@
     "icon": "mdi:phone-message",
     "gradient": "from-red-400 to-pink-500",
     "screenshot": "https://res.cloudinary.com/apideck/image/upload/v1529456124/catalog/twilio/screenshot3.png",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/twilio/362"
   },
   {
     "name": "ランチャー",
@@ -363,7 +390,8 @@
     "icon": "mdi:rocket-launch-outline",
     "gradient": "from-purple-500 to-indigo-600",
     "screenshot": "https://pageflows.com/media/videos/general.mov_V1BxoyB.mp4-screenshot-.jpg",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/raycast/363"
   },
   {
     "name": "インシデント管理",
@@ -376,7 +404,8 @@
     "icon": "mdi:alert-circle-outline",
     "gradient": "from-green-500 to-blue-600",
     "screenshot": "https://www.pagerduty.com/wp-content/uploads/2018/09/image2-2.png",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/pagerduty/364"
   },
   {
     "name": "IaC",
@@ -389,7 +418,8 @@
     "icon": "mdi:cloud-cog",
     "gradient": "from-blue-400 to-teal-500",
     "screenshot": "https://www.datocms-assets.com/2885/1568073964-tfchiw.png?fit=max&q=80&w=2500",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/terraform-cloud/365"
   },
   {
     "name": "画像最適化",
@@ -402,7 +432,8 @@
     "icon": "mdi:image-filter-hdr",
     "gradient": "from-orange-400 to-amber-500",
     "screenshot": "https://developers.cloudflare.com/_astro/optimizing-image-delivery-with-cloudflare-image-resizing-and-r2-diagram.b8EM-pWf_ZGUyOa.svg",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/cloudflare-images/366"
   },
   {
     "name": "エッジコンピューティング",
@@ -415,7 +446,8 @@
     "icon": "mdi:cloud-outline",
     "gradient": "from-orange-400 to-amber-500",
     "screenshot": "https://cf-assets.www.cloudflare.com/slt3lc6tev37/3PeofAYkofLOlbvWxKSbyp/7e12876c010aafbea33f3554ce9731f3/image4-13.png",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/cloudflare-workers/367"
   },
   {
     "name": "通信API",
@@ -428,7 +460,8 @@
     "icon": "mdi:phone-message",
     "gradient": "from-red-400 to-pink-500",
     "screenshot": "https://res.cloudinary.com/apideck/image/upload/v1529456124/catalog/twilio/screenshot3.png",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/twilio/362"
   },
   {
     "name": "データ可視化",
@@ -441,7 +474,8 @@
     "icon": "mdi:chart-bar",
     "gradient": "from-yellow-400 to-orange-500",
     "screenshot": "https://www.tableau.com/sites/default/files/tableau-viewer_interact-with-dashboards_1.png",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/tableau/369"
   },
   {
     "name": "エラーモニタリング",
@@ -454,6 +488,7 @@
     "icon": "mdi:bug-check",
     "gradient": "from-red-500 to-orange-500",
     "screenshot": "https://www.sentry.dev/static/performance-01-8bbd88c2622a155da5c4539b44ffc024.png",
-    "internal": false
+    "internal": false,
+    "reviewsUrl": "https://findy-tools.io/products/sentry/370"
   }
 ]

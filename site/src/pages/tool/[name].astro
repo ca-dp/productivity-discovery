@@ -45,6 +45,17 @@ const statusColor = (status: string) => {
         </div>
         <p class="text-gray-700 mb-6">{tool.description}</p>
         
+        {tool.reviewsUrl && (
+          <a
+            href={tool.reviewsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded mb-6"
+          >
+            詳細・レビュー
+          </a>
+        )}
+        
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div class={`p-4 rounded-lg ${statusColor(tool.securityStatus)}`}>
             <h3 class="font-semibold mb-2 flex items-center">
